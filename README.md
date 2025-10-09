@@ -44,6 +44,45 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[Redberry](https://redberry.international/laravel-development)**
 - **[Active Logic](https://activelogic.com)**
 
+## Project Features
+
+This Laravel Filament application includes:
+
+### User Management System
+- Advanced user management with role-based access control
+- Roles: Superadmin, Admin, Editor, Viewer
+- Protected superadmin role
+- Policy-based authorization
+- See: `CHANGES_SUPERADMIN_EMAIL.md`
+
+### Activity Logging System
+- Comprehensive activity tracking for User and Role models
+- Separate login attempt tracking (success, failed, logout)
+- Read-only Filament resources for viewing logs
+- Automatic archival to JSON files (not deletion)
+- Monthly scheduled archival task
+- Superadmin-only access
+- See: `ACTIVITY_LOGGING.md` and `ARCHIVAL_SYSTEM.md`
+
+### Key Commands
+```bash
+# Archive logs older than 3 months
+php artisan logs:archive
+
+# View scheduled tasks
+php artisan schedule:list
+
+# Seed database with roles and superadmin
+php artisan db:seed
+```
+
+### Documentation
+- `ACTIVITY_LOGGING.md` - Complete activity logging documentation
+- `ACTIVITY_LOGGING_SUMMARY.md` - Quick reference guide
+- `ARCHIVAL_SYSTEM.md` - Log archival system details
+- `CHANGES_SUPERADMIN_EMAIL.md` - Superadmin protection changes
+- `storage/app/logs/archives/README.md` - Archive management guide
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
